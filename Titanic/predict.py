@@ -27,9 +27,18 @@ def correlations(df):
         plt.ylabel('Survived')
         plt.savefig('plot/sex_vs_survived.png')
 
+        
+        x = df['Age']
+        plt.figure(figsize=(8,6))
+        sns.boxplot(x='Survived', y='Age', data=df)
+        plt.xlabel('Survived?')
+        plt.ylabel('Age')
+
+        plt.savefig('plot/age_vs_survived.png')
+
 
 if __name__ == "__main__":
     df = format_data()
     print(df)
-    correlations(df['Sex'], df['Survived'])
+    correlations(df)
 
